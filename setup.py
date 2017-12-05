@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 import os
 import platform
 
-DESCRIPTION = "A simple lightweight python wrapper for the Microsoft Cognitive Services."
-VERSION = '0.4.0'
+DESCRIPTION = "A simple lightweight python wrapper for the Microsoft Cognitive Services based on usage for machine learning."
+VERSION = '0.0.1'
 LONG_DESCRIPTION = None
 try:
     LONG_DESCRIPTION = open('README.md').read()
@@ -15,8 +15,6 @@ CLASSIFIERS = [
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
-    'Programming Language :: Python',
-    "Programming Language :: Python :: 2",
     "Programming Language :: Python :: 3",
     'Topic :: Software Development :: Libraries :: Python Modules',
 ]
@@ -28,13 +26,12 @@ INSTALL_REQUIRES = [
 ]
 
 setup(
-    name='py-ms-cognitive',
-    #packages = ['py-ms-cognitive'],
+    name='py-ms-cognitive-ml',
     packages = find_packages(),
     version=VERSION,
-    author=u'Tristan Tao',
-    author_email='tristan@teamleada.com',
-    url='https://github.com/tristantao/py-ms-cognitive',
+    author=u'Oliver Reid',
+    author_email='reiol787@student.otago.ac.nz',
+    url='https://github.com/beardo01/py-ms-cognitive-ml',
     license='MIT',
     keywords=KEYWORDS,
     description=DESCRIPTION,

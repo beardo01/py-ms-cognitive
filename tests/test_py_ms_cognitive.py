@@ -2,11 +2,11 @@ from unittest import TestCase
 import time, ConfigParser
 import os
 
-from py_ms_cognitive import PyMsCognitiveWebSearch
-from py_ms_cognitive import PyMsCognitiveImageSearch
-from py_ms_cognitive import PyMsCognitiveVideoSearch
-from py_ms_cognitive import PyMsCognitiveNewsSearch
-from py_ms_cognitive import PyMsCognitiveSuggestions
+from py_ms_cognitive_ml import PyMsCognitiveWebSearch
+from py_ms_cognitive_ml import PyMsCognitiveImageSearch
+from py_ms_cognitive_ml import PyMsCognitiveVideoSearch
+from py_ms_cognitive_ml import PyMsCognitiveNewsSearch
+from py_ms_cognitive_ml import PyMsCognitiveSuggestions
 
 
 

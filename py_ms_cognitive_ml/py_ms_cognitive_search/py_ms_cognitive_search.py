@@ -43,9 +43,10 @@ class PyMsCognitiveSearch(object):
             # return the proper JSON object, or error code if request didn't go through.
             self.most_recent_json = response.json()
             json_results = response.json()
-            if response.status_code in [401, 403]: #401 is invalid key, 403 is out of monthly quota.
-                raise PyMsCognitiveWebSearchException("CODE {code}: {message}".format(code=response.status_code,message=json_results["message"]) )
-            elif response.status_code in [429]: #429 means try again in x seconds.
+            if response.status_code in [401, 403]:  # 401 is invalid key, 403 is out of monthly quota.
+                raise PyMsCognitiveWebSearchException("CODE {code}: {message}".format(code=response.status_code,
+                                                                                      message=json_results["message"]))
+            elif response.status_code in [429]:  # 429 means try again in x seconds.
                 message = json_results['message']
                 try:
                     # extract time out seconds from response
