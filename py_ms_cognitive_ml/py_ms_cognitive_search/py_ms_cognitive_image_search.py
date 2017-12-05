@@ -35,7 +35,7 @@ class PyMsCognitiveImageSearch(PyMsCognitiveSearch):
         headers = {'Ocp-Apim-Subscription-Key': self.api_key}
 
         if not self.silent_fail:
-            QueryChecker.check_web_paramscontent_url(payload, headers)
+            QueryChecker.check_web_params(payload, headers)
 
         response = requests.get(self.QUERY_URL, params=payload, headers=headers)
         json_results = self.get_json_results(response)
@@ -50,28 +50,15 @@ class ImageResult(object):
     The class represents a SINGLE Image result.
     Each result will come with the following:
 
-    the variable json will contain the full json object of the result.
-
-    content_url: duration of the Image
+    json: contains all the information returned from the API request
+    url: web address of the image
     name: name of the image / page title
-    image_id: image id
-    image_insights_token: image insights token
-    web_search_url: the bing search url for the image
-    host_page_url: the bing url to the host page
-    content_size: size of the image
-    thumbnail_url: url of the thumbnail
-
-    Not included: lots of info, poke in json to see.
+    extension: image extension
     """
 
     def __init__(self, result):
         self.json = result
-        self.content_url = result.get('contentUrl')
+        self.url = result.get('contentUrl')
         self.name = result.get('name')
-        self.image_id = result.get('ImageId')
-        self.image_insights_token = result.get('imageInsightsToken')
-        self.web_search_url = result.get('webSearchUrl')
-        self.host_page_url = result.get('hostPageUrl')
-        self.content_size = result.get('contentSize')
-        self.thumbnail_url = result.get('thumbnailUrl')
+        self.extension = result.get('encodingFormat')
 

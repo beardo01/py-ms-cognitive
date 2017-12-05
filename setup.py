@@ -1,9 +1,7 @@
 from setuptools import setup, find_packages
-import os
-import platform
 
-DESCRIPTION = "A simple lightweight python wrapper for the Microsoft Cognitive Services based on usage for machine learning."
-VERSION = '0.0.1'
+DESCRIPTION = "Light wrapper for Microsoft's Cognitive Services API to facilitate data gathering for machine learning."
+VERSION = '0.0.2'
 LONG_DESCRIPTION = None
 try:
     LONG_DESCRIPTION = open('README.md').read()
@@ -16,10 +14,13 @@ CLASSIFIERS = [
     'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
     "Programming Language :: Python :: 3",
+    'Programming Language :: Python :: 3.2',
+    'Programming Language :: Python :: 3.3',
+    'Programming Language :: Python :: 3.4',
     'Topic :: Software Development :: Libraries :: Python Modules',
 ]
 
-KEYWORDS = ['Microsoft', 'Cognitive Services', 'API', 'Search']
+KEYWORDS = ['Microsoft', 'Cognitive Services', 'API', 'Search', 'Image Search', 'Machine Learning', 'Image Scraping']
 
 INSTALL_REQUIRES = [
     'requests',
@@ -27,7 +28,7 @@ INSTALL_REQUIRES = [
 
 setup(
     name='py-ms-cognitive-ml',
-    packages = find_packages(),
+    packages=find_packages(),
     version=VERSION,
     author=u'Oliver Reid',
     author_email='reiol787@student.otago.ac.nz',
@@ -38,6 +39,5 @@ setup(
     long_description=LONG_DESCRIPTION,
     classifiers=CLASSIFIERS,
     install_requires=INSTALL_REQUIRES,
-    test_suite='nose.collector',
-    tests_require=['nose'],
+    python_requires='>=3'
 )

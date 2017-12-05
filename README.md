@@ -36,7 +36,10 @@ pip3 install py-ms-cognitive-ml
 Usage
 =====
 
-Remember to set the `API_KEY` as your own.
+I've included a script that uses the py-ms-cognitive-ml library to scrape images from the Bing Image Search API.
+
+Remember to set the `API_KEY` as your own and configure the terms in settings to your liking. Search terms should be
+a list of strings as shown below. To use this script copy the sample code into a Python file and then run it.
 
 #### Getting Images
 
@@ -49,6 +52,7 @@ from py_ms_cognitive_ml import PyMsCognitiveImageSearch
 # Settings
 search_terms = ["keys", "cats", "dogs"]
 serach_quota_per_term = 5
+
 results = []
 total_downloads = 0
 
